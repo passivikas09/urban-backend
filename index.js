@@ -8,7 +8,9 @@ const admin=require("./db/seed")
 const cors=require('cors')
 require("./db/config")
 app.use(express.static(__dirname+"/public/"))
-app.use(cors())
+app.use(cors({
+    origin:"https://urban-front-imy256h7w-vikas-passis-projects.vercel.app/"
+}))
 app.use(express.urlencoded())
 app.use(express.json())
 
