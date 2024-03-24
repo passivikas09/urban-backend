@@ -1,4 +1,5 @@
 const jwt=require('jsonwebtoken')
+require("dotenv").config()
 module.exports=(req,res,next)=>{
    let token =req.headers["authorization"]
    if(!token){
@@ -9,7 +10,7 @@ module.exports=(req,res,next)=>{
         })
    }else{
         try{
-            let decode=jwt.verify(token,"SECRET123")
+            let decode=jwt.verify(token,process.env.SECRETKEY)
             if(!decode){
                 res.send({
                     success:false,
