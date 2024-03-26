@@ -9,7 +9,7 @@ const admin=require("./db/seed")
 require("./db/config")
 
 app.use(express.static(__dirname+"/public/"))
-
+const cors=require("cors")
 app.use(cors({
     origin: 'https://urban-front.vercel.app/', // Allow requests from http://localhost:3001
     methods: ['GET', 'POST','PUT',"DELETE"], // Allow only specified methods
