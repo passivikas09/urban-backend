@@ -11,9 +11,9 @@ require("./db/config")
 app.use(express.static(__dirname+"/public/"))
 const cors=require("cors")
 app.use(cors({
-    origin: 'https://urban-front.vercel.app/', // Allow requests from http://localhost:3001
-    methods: ['GET', 'POST','PUT',"DELETE"], // Allow only specified methods
-    allowedHeaders: ['Content-Type', 'Authorization'] // Allow only specified headers
+    origin:"https://urban-front-vercel.app",
+    methods:['GET','POST','PUT'],
+    allowedHeaders:['Content-Type', 'Authorization']
 }))
 app.use(express.urlencoded())
 app.use(express.json())
@@ -27,3 +27,8 @@ app.listen(port,()=>{
     console.log(`The server is running at port ${port}`)
 })
 
+// cors({
+//     origin: 'https://urban-front.vercel.app/', // Allow requests from http://localhost:3001
+//     methods: ['GET', 'POST','PUT',"DELETE"], // Allow only specified methods
+//     allowedHeaders: ['Content-Type', 'Authorization'] // Allow only specified headers
+// })
