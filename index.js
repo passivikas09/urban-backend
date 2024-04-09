@@ -11,8 +11,9 @@ require("./db/config")
 app.use(express.static(__dirname+"/public/"))
 const cors=require("cors")
 app.use(cors({
-    origin:"https://urban-front-vercel.app",
-    methods:['GET','POST','PUT','DELETE']
+    origin:"https://urban-front.vercel.app",
+    methods:['GET','POST','PUT','DELETE'],
+    
 }))
 app.use(express.urlencoded())
 app.use(express.json())
