@@ -7,8 +7,13 @@ const adminRouter=require("./Routes/adminRoute")
 const admin=require("./db/seed")
 
 require("./db/config")
+app.use(express.static("public", { 
+    setHeaders: (res, path, stat) => {
+        // Set the Access-Control-Allow-Origin header to allow requests from the specified domain
+        res.set("Access-Control-Allow-Origin", "https://sangria-centipede-ring.cyclic.app");
+    }
+}));
 
-app.use(express.static(__dirname+"/public/"))
 const cors=require("cors")
 app.use(cors({
     origin:"https://urban-front.vercel.app",
